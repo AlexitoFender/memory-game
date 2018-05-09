@@ -66,6 +66,7 @@ function addEventListener(){
 	for (const card of cardList) {
   		card.addEventListener("click", function(){
   			displayCardSymbol(card);
+  			listOpenCards(card);
   		})
 	}
 }
@@ -73,4 +74,11 @@ function addEventListener(){
 function displayCardSymbol(card){
 	card.setAttribute("class", "card show");
 }
+
+let openList = [];
+
+function listOpenCards(card){
+	openList.push(card);
+}
+
 

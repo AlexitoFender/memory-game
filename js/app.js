@@ -1,7 +1,9 @@
 /*
  * Create a list that holds all of your cards
  */
+
 let cardList = document.querySelectorAll(".deck .card");
+let cardContentList = document.querySelectorAll(".deck i");
 
 /*
  * Display the cards on the page

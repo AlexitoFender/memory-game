@@ -4,6 +4,23 @@
 
 let cardList = document.querySelectorAll(".deck .card");
 let cardContentList = document.querySelectorAll(".deck i");
+const contentToShuffle = [
+'fa fa-diamond',
+'fa fa-diamond',
+'fa fa-paper-plane-o',
+'fa fa-paper-plane-o',
+'fa fa-paper-archor',
+'fa fa-paper-archor',
+'fa fa-paper-bolt',
+'fa fa-paper-bolt',
+'fa fa-paper-cube',
+'fa fa-paper-cube',
+'fa fa-paper-leaf',
+'fa fa-paper-leaf',
+'fa fa-paper-bicycle',
+'fa fa-paper-bicycle',
+'fa fa-paper-bomb',
+'fa fa-paper-bomb']
 
 /*
  * Display the cards on the page

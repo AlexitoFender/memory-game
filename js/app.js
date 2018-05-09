@@ -65,8 +65,12 @@ function shuffle(array) {
 function addEventListener(){
 	for (const card of cardList) {
   		card.addEventListener("click", function(){
-  			card.setAttribute("class", "card show");
-  			console.log("alex");
+  			displayCardSymbol(card);
   		})
 	}
 }
+
+function displayCardSymbol(card){
+	card.setAttribute("class", "card show");
+}
+

@@ -29,6 +29,12 @@ const contentToShuffle = [
  *   - add each card's HTML to the page
  */
 
+function addShuffleCardContent(array){
+	for (let i = 0; i < 16; i++){
+		cardContentList[i].setAttribute('class', array[i]);
+	}
+}
+
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;

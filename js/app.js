@@ -94,3 +94,14 @@ function cardsMatch(array){
   		openList = [];
 }
 
+function cardsDoNotMatch(array){
+  		openList[0].setAttribute("class", "card show nomatch");
+  		openList[1].setAttribute("class", "card show nomatch");
+  		setTimeout(function(){
+  		 	openList[0].setAttribute("class", "card");
+  			openList[1].setAttribute("class", "card");
+  			openList = [];
+  		}, 1000);
+
+}
+

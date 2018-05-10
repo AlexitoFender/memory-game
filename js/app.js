@@ -3,7 +3,7 @@
  */
 
 let cardList = document.querySelectorAll(".deck .card");
-let cardContentList = document.querySelectorAll(".deck i");
+let cardContentList = document.querySelectorAll(".card i");
 const contentToShuffle = [
 'fa fa-diamond',
 'fa fa-diamond',
@@ -50,7 +50,6 @@ function shuffle(array) {
     return array;
 }
 
-
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
@@ -63,12 +62,12 @@ function shuffle(array) {
  */
 
 function addEventListener(){
-	for (const card of cardList) {
-  		card.addEventListener("click", function(){
-  			displayCardSymbol(card);
-  			listOpenCards(card);
-  		})
-	}
+	for (let i = 0; i< 16; i++) {
+  		cardList[i].addEventListener("click", function(){
+  			displayCardSymbol(cardList[i]);
+  			listOpenCards(cardList[i]);
+		})
+  	}
 }
 
 function displayCardSymbol(card){
@@ -79,6 +78,17 @@ let openList = [];
 
 function listOpenCards(card){
 	openList.push(card);
+
+  	if(openList[1] != undefined && openList[0].innerHTML === openList[1].innerHTML){
+  		cardsMatch(openList);
+  	}
+
+  	if(openList[1] != undefined && openList[0].innerHTML != openList[1].innerHTML){
+  		cardsDoNotMatch(openList);
+  	}
 }
+
+
+
 
 

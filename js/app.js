@@ -51,10 +51,10 @@ function shuffle(array) {
 }
 
 /*Initial settings*/
-/*let shuffleCards = shuffle(contentToShuffle);
+let shuffleCards = shuffle(contentToShuffle);
 addShuffleCardContent(shuffleCards);
 addEventListener();
-*/
+
 
 
 /*
@@ -94,8 +94,17 @@ function event(){
 	listOpenCards(this);
 }
 
+let counter = 0;
+
+function movesCounter(){
+	const moves = document.querySelector(".moves");
+	counter += 1;
+	moves.innerHTML = counter;
+}
+
 function displayCardSymbol(card){
 	card.setAttribute("class", "card show open");
+	movesCounter();
 }
 
 let openList = [];

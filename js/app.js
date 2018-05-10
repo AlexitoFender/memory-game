@@ -88,6 +88,12 @@ function removeEvent(card){
 	card.removeEventListener("click", event);
 }
 
+function event(){
+	displayCardSymbol(this);
+	this.removeEventListener("click", event);
+	listOpenCards(this);
+}
+
 function displayCardSymbol(card){
 	card.setAttribute("class", "card show open");
 }

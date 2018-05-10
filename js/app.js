@@ -68,6 +68,11 @@ addEventListener();
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
+function addEventListener(){
+	for (let i = 0; i< 16; i++) {
+  		addEvent(cardList[i]);
+  	}
+}
 
 function displayCardSymbol(card){
 	card.setAttribute("class", "card show open");

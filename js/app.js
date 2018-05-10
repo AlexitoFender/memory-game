@@ -159,10 +159,14 @@ function listOpenCards(card){
   	}
 }
 
+let matchesCards = 0;
+
 function cardsMatch(array){
   		openList[0].setAttribute("class", "card show open match");
   		openList[1].setAttribute("class", "card show open match");
   		openList = [];
+  		matchesCards += 1;
+  		checkEndGame();
 }
 
 function cardsDoNotMatch(array){
@@ -206,3 +210,13 @@ function valorateStars(){
 			stars[1].setAttribute("class", "fa fa-star-o");
 		}
 }
+
+/*
+ * Check end game
+ */
+ function checkEndGame(){
+ 	//Neened at least 8 movements for finish the game
+ 	if(counter >= 8 && matchesCards === 8){
+ 		congrats();
+ 	}
+ }

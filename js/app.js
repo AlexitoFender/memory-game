@@ -1,9 +1,16 @@
 /*
  * Create a list that holds all of your cards
  */
-
 let cardList = document.querySelectorAll(".deck .card");
+
+/*
+ * Create a list that holds all the icos of the cards
+ */
 let cardContentList = document.querySelectorAll(".card i");
+
+/*
+ * Create a list of classes for set attribute to the <i> tags
+ */
 const contentToShuffle = [
 'fa fa-diamond',
 'fa fa-diamond',
@@ -29,6 +36,9 @@ const contentToShuffle = [
  *   - add each card's HTML to the page
  */
 
+ /*
+ * Set shuffled classes to <i>, shuffled icons every time
+ */
 function addShuffleCardContent(array){
 	for (let i = 0; i < 16; i++){
 		cardContentList[i].setAttribute('class', array[i]);
@@ -50,12 +60,20 @@ function shuffle(array) {
     return array;
 }
 
-/*Initial settings*/
+/*
+ * First shuffling of the contentToShuffle
+ */
 let shuffleCards = shuffle(contentToShuffle);
+
+/*
+ * Set shuffling attributes to the <i>
+ */
 addShuffleCardContent(shuffleCards);
+
+/*
+ * Add event listener to all the cards
+ */
 addEventListener();
-
-
 
 /*
  * set up the event listener for a card. If a card is clicked:
@@ -68,6 +86,9 @@ addEventListener();
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
+/*
+ * Declarations for add event listener and remove event listener
+ */
 function addEventListener(){
 	for (let i = 0; i< 16; i++) {
   		addEvent(cardList[i]);
@@ -88,12 +109,18 @@ function removeEvent(card){
 	card.removeEventListener("click", event);
 }
 
+/*
+ * Function event separated of the function add event listener, this make possible the remove event listener
+ */
 function event(){
 	displayCardSymbol(this);
 	this.removeEventListener("click", event);
 	listOpenCards(this);
 }
 
+/*
+ * Counter of moves of all the cards
+ */
 let counter = 0;
 
 function movesCounter(){
@@ -102,11 +129,17 @@ function movesCounter(){
 	moves.innerHTML = counter;
 }
 
+/*
+ * Display the icon and change the color of the card when is clicked
+ */
 function displayCardSymbol(card){
 	card.setAttribute("class", "card show open");
 	movesCounter();
 }
 
+/*
+ * List of showed cards and validations
+ */
 let openList = [];
 
 function listOpenCards(card){

@@ -134,8 +134,7 @@ function movesCounter(){
  */
 function displayCardSymbol(card){
 	card.setAttribute("class", "card show open");
-	movesCounter();
-	if(counter === 1){
+	if(counter === 0){
 		timeCounter();
 	}
 }
@@ -150,10 +149,12 @@ function listOpenCards(card){
 
   	if(openList[1] != undefined && openList[0].innerHTML === openList[1].innerHTML){
   		cardsMatch(openList);
+		movesCounter();
   	}
 
   	if(openList[1] != undefined && openList[0].innerHTML != openList[1].innerHTML){
   		cardsDoNotMatch(openList);
+		movesCounter();
   	}
 }
 
@@ -188,3 +189,8 @@ function timeCounter(){
   		timer++;
 	},1000);
 };
+
+/*
+ * Stars by moves
+ */
+

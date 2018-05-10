@@ -134,7 +134,7 @@ function movesCounter(){
  */
 function displayCardSymbol(card){
 	card.setAttribute("class", "card show open");
-	if(counter === 0){
+	if(!oneTime){
 		timeCounter();
 	}
 }
@@ -148,13 +148,13 @@ function listOpenCards(card){
 	openList.push(card);
 
   	if(openList[1] != undefined && openList[0].innerHTML === openList[1].innerHTML){
+  		movesCounter();
   		cardsMatch(openList);
-		movesCounter();
   	}
 
   	if(openList[1] != undefined && openList[0].innerHTML != openList[1].innerHTML){
+  		movesCounter();
   		cardsDoNotMatch(openList);
-		movesCounter();
   	}
 }
 
@@ -182,8 +182,10 @@ function cardsDoNotMatch(array){
  */
 let timer = 1;
 let timerCounter = document.querySelector("span .timer");
+let oneTime = false;
 
 function timeCounter(){
+	oneTime = true;
 	window.setInterval(function(){
   		timerCounter.innerHTML = timer;
   		timer++;

@@ -71,7 +71,7 @@ function addEventListener(){
 }
 
 function displayCardSymbol(card){
-	card.setAttribute("class", "card show");
+	card.setAttribute("class", "card show open");
 }
 
 let openList = [];
@@ -87,8 +87,6 @@ function listOpenCards(card){
   		cardsDoNotMatch(openList);
   	}
 }
-
-
 
 
 

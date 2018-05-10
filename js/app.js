@@ -203,11 +203,17 @@ function timeCounter(){
 const stars = document.querySelectorAll(".stars i");
 
 function valorateStars(){
-		if(counter > 16){
-			stars[2].setAttribute("class", "fa fa-star-o");
+		if(counter < 17){
+			return 3;
 		}
-		if(counter > 24){
+
+		if(counter === 17){
+			stars[2].setAttribute("class", "fa fa-star-o");
+			return 2;
+		}
+		if(counter === 25){
 			stars[1].setAttribute("class", "fa fa-star-o");
+			return 1;
 		}
 }
 
@@ -220,3 +226,22 @@ function valorateStars(){
  		congrats();
  	}
  }
+
+/*
+ * End game alert
+ */
+/*function congrats(){
+	const modal = document.querySelector(".modal-finish");
+	modal.style.display = "block";
+
+	const lastTimer = document.querySelector(".last-timer");
+	lastTimer.innerHTML = timer;
+
+	const lastMoves = document.querySelector(".last-moves");
+	lastMoves.innerHTML = counter;
+
+	let numberOfStars = valorateStars();
+	const lastStars = document.querySelector(".last-stars");
+	lastStars.innerHTML = numberOfStars;
+}
+*/

@@ -118,3 +118,9 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+.modal-finish {
+    display: none;
+    position: fixed;
+}
+

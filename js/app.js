@@ -127,6 +127,7 @@ function movesCounter(){
 	const moves = document.querySelector(".moves");
 	counter += 1;
 	moves.innerHTML = counter;
+  	valorateStars();
 }
 
 /*
@@ -193,6 +194,15 @@ function timeCounter(){
 };
 
 /*
- * Stars by moves
+ * Stars by moves, less or equal than 16 moves 3 stars, more than 16 and less or equal than 24 moves 2 stars, more than 24 moves 1 star.
  */
+const stars = document.querySelectorAll(".stars i");
 
+function valorateStars(){
+		if(counter > 16){
+			stars[2].setAttribute("class", "fa fa-star-o");
+		}
+		if(counter > 24){
+			stars[1].setAttribute("class", "fa fa-star-o");
+		}
+}

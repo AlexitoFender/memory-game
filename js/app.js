@@ -74,6 +74,13 @@ function addEventListener(){
   	}
 }
 
+function removeEventListener(){
+	for (let i = 0; i< 16; i++) {
+  		removeEvent(cardList[i]);
+  	}
+}
+
+
 function displayCardSymbol(card){
 	card.setAttribute("class", "card show open");
 }

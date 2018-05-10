@@ -50,6 +50,13 @@ function shuffle(array) {
     return array;
 }
 
+/*Initial settings*/
+/*let shuffleCards = shuffle(contentToShuffle);
+addShuffleCardContent(shuffleCards);
+addEventListener();
+*/
+
+
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
@@ -61,14 +68,6 @@ function shuffle(array) {
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
-function addEventListener(){
-	for (let i = 0; i< 16; i++) {
-  		cardList[i].addEventListener("click", function(){
-  			displayCardSymbol(cardList[i]);
-  			listOpenCards(cardList[i]);
-		})
-  	}
-}
 
 function displayCardSymbol(card){
 	card.setAttribute("class", "card show open");
@@ -95,13 +94,14 @@ function cardsMatch(array){
 }
 
 function cardsDoNotMatch(array){
+		removeEventListener();
   		openList[0].setAttribute("class", "card show nomatch");
   		openList[1].setAttribute("class", "card show nomatch");
   		setTimeout(function(){
   		 	openList[0].setAttribute("class", "card");
   			openList[1].setAttribute("class", "card");
   			openList = [];
+  			addEventListener();
   		}, 1000);
 
 }
-

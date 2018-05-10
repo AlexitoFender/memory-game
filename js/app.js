@@ -88,5 +88,9 @@ function listOpenCards(card){
   	}
 }
 
-
+function cardsMatch(array){
+  		openList[0].setAttribute("class", "card show open match");
+  		openList[1].setAttribute("class", "card show open match");
+  		openList = [];
+}
 

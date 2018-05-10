@@ -80,6 +80,9 @@ function removeEventListener(){
   	}
 }
 
+function addEvent(card){
+	card.addEventListener("click", event);
+}
 
 function displayCardSymbol(card){
 	card.setAttribute("class", "card show open");

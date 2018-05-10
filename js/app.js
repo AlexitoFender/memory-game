@@ -135,6 +135,9 @@ function movesCounter(){
 function displayCardSymbol(card){
 	card.setAttribute("class", "card show open");
 	movesCounter();
+	if(counter === 1){
+		timeCounter();
+	}
 }
 
 /*
@@ -172,3 +175,16 @@ function cardsDoNotMatch(array){
   		}, 1000);
 
 }
+
+/*
+ * Add timer
+ */
+let timer = 1;
+let timerCounter = document.querySelector("span .timer");
+
+function timeCounter(){
+	window.setInterval(function(){
+  		timerCounter.innerHTML = timer;
+  		timer++;
+	},1000);
+};

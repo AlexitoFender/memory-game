@@ -18,7 +18,7 @@ body {
 
 body {
     background: #2d3e50;
-    font-family: 'Coda', cursive;
+    font-family: 'Roboto thin';
 }
 
 .container {
@@ -29,7 +29,6 @@ body {
 }
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }
 

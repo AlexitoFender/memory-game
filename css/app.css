@@ -31,7 +31,7 @@ body {
 
 h1 {
     font-weight: 400;
-    font-size: 48pt;
+    font-size: 57pt;
 }
 
 /*
@@ -39,8 +39,8 @@ h1 {
  */
 
 .deck {
-    width: 506px;
-    min-height: 506px;
+    width: 600px;
+    min-height: 600px;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
@@ -50,8 +50,11 @@ h1 {
 }
 
 .deck .card {
-    height: 125px;
-    width: 125px;
+    height: 150px;
+    width: 150px;
+    border-style: solid;
+    border-width: thin;
+    border-color: #2d3e50;
     background: #51b3d8;
     font-size: 0;
     color: #ffffff;

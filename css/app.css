@@ -92,30 +92,60 @@ h1 {
  */
 
 .score-panel {
-    text-align: left;
-    width: 345px;
-    margin-bottom: 10px;
+    width: 600px;
+    font-size: 20px;
+    font-family: Roboto light;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.stars, .moves-container, .timer-container, .restart{
+    width: 150px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .score-panel .stars {
+    /*width: 150px;
+    text-align: center;
+    display: inline-block;
     margin: 0;
     padding: 0;
-    display: inline-block;
-    margin: 0 5px 0 0;
+*/
 }
 
 .score-panel .stars li {
     list-style: none;
     display: inline-block;
+    margin: 0;
+    padding: 0;
 }
 
-.timer-text {
-    padding-left: 5%;
+.score-panel .moves-container {
+    /*width: 150px;
+    text-align: center;
+    display: inline-block;
+    margin: 0;
+    padding: 0;*/
+}
+
+.score-panel .timer-container {
+    /*width: 150px;
+    text-align: center;
+    display: inline-block;
+    margin: 0;
+    padding: 0;*/
 }
 
 .score-panel .restart {
-    float: right;
+    /*width: 150px;
+    text-align: center;
     cursor: pointer;
+    display: inline-block;
+    margin: 0;
+    padding: 0;*/
 }
 
 .modal-finish {

@@ -203,15 +203,15 @@ function timeCounter(){
 const stars = document.querySelectorAll(".stars i");
 
 function valorateStars(){
-		if(counter < 17){
+		if(counter <= 16){
 			return 3;
 		}
 
-		if(counter === 17){
+		if(counter > 16 && <= 24){
 			stars[2].setAttribute("class", "fa fa-star-o");
 			return 2;
 		}
-		if(counter === 25){
+		if(counter > 24){
 			stars[1].setAttribute("class", "fa fa-star-o");
 			return 1;
 		}

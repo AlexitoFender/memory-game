@@ -18,7 +18,7 @@ body {
 
 body {
     background: #2d3e50;
-    font-family: 'Roboto thin';
+    font-family: 'Roboto Thin';
     color: #ffffff;
 }
 
@@ -30,7 +30,8 @@ body {
 }
 
 h1 {
-    font-weight: 300;
+    font-weight: 400;
+    font-size: 48pt;
 }
 
 /*
@@ -38,8 +39,8 @@ h1 {
  */
 
 .deck {
-    width: 503px;
-    min-height: 503px;
+    width: 506px;
+    min-height: 506px;
     padding: 0;
     display: flex;
     flex-wrap: wrap;

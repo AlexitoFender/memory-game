@@ -228,20 +228,13 @@ function valorateStars(){
  }
 
 /*
- * End game alert
- */
-/*function congrats(){
-	const modal = document.querySelector(".modal-finish");
-	modal.style.display = "block";
+  * Function to reset the game
+  */
+const restart = document.querySelector(".restart");
+restart.addEventListener("click", function(){
+  reset();
+});
 
-	const lastTimer = document.querySelector(".last-timer");
-	lastTimer.innerHTML = timer;
-
-	const lastMoves = document.querySelector(".last-moves");
-	lastMoves.innerHTML = counter;
-
-	let numberOfStars = valorateStars();
-	const lastStars = document.querySelector(".last-stars");
-	lastStars.innerHTML = numberOfStars;
+function reset(){
+  location.reload(true);
 }
-*/

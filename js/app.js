@@ -186,7 +186,7 @@ function cardsDoNotMatch(array){
  * Add timer
  */
 let timer = 1;
-let timerCounter = document.querySelector("span .timer");
+let timerCounter = document.querySelector(".timer");
 let oneTime = false;
 
 function timeCounter(){

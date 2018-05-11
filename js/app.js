@@ -178,7 +178,7 @@ function cardsDoNotMatch(array){
   			openList[1].setAttribute("class", "card");
   			openList = [];
   			addEventListener();
-  		}, 1000);
+  		}, 700);
 
 }
 

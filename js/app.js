@@ -242,6 +242,8 @@ function reset(){
 /*
  * End game alert
  */
+const playAgain = document.querySelector(".play-again");
+
 function congrats(){
   const modal = document.querySelector(".modal-finish");
   modal.style.display = "block";
@@ -255,4 +257,8 @@ function congrats(){
   let numberOfStars = valorateStars();
   const lastStars = document.querySelector(".last-stars");
   lastStars.innerHTML = numberOfStars;
+
+  playAgain.addEventListener("click", function(){
+    reset();
+  })
 }

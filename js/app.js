@@ -207,7 +207,7 @@ function valorateStars(){
 			return 3;
 		}
 
-		if(counter > 16 && <= 24){
+		if(counter > 16 && counter <= 24){
 			stars[2].setAttribute("class", "fa fa-star-o");
 			return 2;
 		}

@@ -230,7 +230,7 @@ function valorateStars(){
 /*
   * Function to reset the game
   */
-const restart = document.querySelector(".restart");
+const restart = document.querySelector(".fa-repeat");
 restart.addEventListener("click", function(){
   reset();
 });

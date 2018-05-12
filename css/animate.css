@@ -2041,7 +2041,7 @@
     transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
     -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
-    opacity: 0;
+    opacity: 100;
   }
 
   40% {

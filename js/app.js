@@ -1,7 +1,7 @@
 /*
  * Create a list that holds all of your cards
  */
-let cardList = document.querySelectorAll(".deck .card");
+let cardList = document.querySelectorAll(".card");
 
 /*
  * Create a list that holds all the icos of the cards
@@ -91,7 +91,10 @@ addEventListener();
  */
 function addEventListener(){
 	for (let i = 0; i< 16; i++) {
-  		addEvent(cardList[i]);
+    //Validation to block the cards when match
+    if(cardList[i].className != "card show open match animated rubberBand block"){
+  		  addEvent(cardList[i]);
+      }
   	}
 }
 
@@ -162,8 +165,9 @@ function listOpenCards(card){
 let matchesCards = 0;
 
 function cardsMatch(array){
-  		openList[0].setAttribute("class", "card show open match animated rubberBand");
-  		openList[1].setAttribute("class", "card show open match animated rubberBand");
+      //Block the cards when match
+  		openList[0].setAttribute("class", "card show open match animated rubberBand block");
+  		openList[1].setAttribute("class", "card show open match animated rubberBand block");
   		openList = [];
   		matchesCards += 1;
   		checkEndGame();

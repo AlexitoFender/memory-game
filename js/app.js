@@ -250,20 +250,25 @@ function reset(){
 const playAgain = document.querySelector(".play-again");
 
 function congrats(){
-  const modal = document.querySelector(".modal-finish");
-  modal.style.display = "block";
+  setTimeout(function(){
+    const modal = document.querySelector(".modal-finish");
+    modal.style.display = "block";
 
-  const lastTimer = document.querySelector(".last-timer");
-  lastTimer.innerHTML = timer;
+    const modalContent = document.querySelector(".modal-content");
+    modalContent.setAttribute("class", "modal-content animated bounceIn")
 
-  const lastMoves = document.querySelector(".last-moves");
-  lastMoves.innerHTML = counter;
+    const lastTimer = document.querySelector(".last-timer");
+    lastTimer.innerHTML = timer;
 
-  let numberOfStars = valorateStars();
-  const lastStars = document.querySelector(".last-stars");
-  lastStars.innerHTML = numberOfStars;
+    const lastMoves = document.querySelector(".last-moves");
+    lastMoves.innerHTML = counter;
 
-  playAgain.addEventListener("click", function(){
-    reset();
-  })
+    let numberOfStars = valorateStars();
+    const lastStars = document.querySelector(".last-stars");
+    lastStars.innerHTML = numberOfStars;
+
+    playAgain.addEventListener("click", function(){
+      reset();
+    })
+  }, 1000);
 }

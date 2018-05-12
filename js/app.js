@@ -171,8 +171,10 @@ function cardsMatch(array){
 
 function cardsDoNotMatch(array){
 		removeEventListener();
+      setTimeout(function(){
   		openList[0].setAttribute("class", "card show nomatch animated shake");
   		openList[1].setAttribute("class", "card show nomatch animated shake");
+      }, 200);
   		setTimeout(function(){
   		 	openList[0].setAttribute("class", "card animated flipInY");
   			openList[1].setAttribute("class", "card animated flipInY");

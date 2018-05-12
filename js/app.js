@@ -134,7 +134,7 @@ function movesCounter(){
  * Display the icon and change the color of the card when is clicked
  */
 function displayCardSymbol(card){
-	card.setAttribute("class", "card show open");
+	card.setAttribute("class", "card show open animated bounceIn");
 	if(!oneTime){
 		timeCounter();
 	}
@@ -179,7 +179,6 @@ function cardsDoNotMatch(array){
   			openList = [];
   			addEventListener();
   		}, 700);
-
 }
 
 /*

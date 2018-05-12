@@ -174,12 +174,8 @@ function cardsDoNotMatch(array){
   		openList[0].setAttribute("class", "card show nomatch animated shake");
   		openList[1].setAttribute("class", "card show nomatch animated shake");
   		setTimeout(function(){
-  		 	openList[0].setAttribute("class", "card");
-  			openList[1].setAttribute("class", "card");
-        openList[0].classList.toggle("animated");
-        openList[0].classList.toggle("flipInY");
-        openList[1].classList.toggle("animated");
-        openList[1].classList.toggle("flipInY");
+  		 	openList[0].setAttribute("class", "card animated flipInY");
+  			openList[1].setAttribute("class", "card animated flipInY");
   			openList = [];
   			addEventListener();
   		}, 700);

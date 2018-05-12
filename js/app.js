@@ -171,8 +171,8 @@ function cardsMatch(array){
 
 function cardsDoNotMatch(array){
 		removeEventListener();
-  		openList[0].setAttribute("class", "card show nomatch");
-  		openList[1].setAttribute("class", "card show nomatch");
+  		openList[0].setAttribute("class", "card show nomatch animated shake");
+  		openList[1].setAttribute("class", "card show nomatch animated shake");
   		setTimeout(function(){
   		 	openList[0].setAttribute("class", "card");
   			openList[1].setAttribute("class", "card");

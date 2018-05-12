@@ -162,8 +162,8 @@ function listOpenCards(card){
 let matchesCards = 0;
 
 function cardsMatch(array){
-  		openList[0].setAttribute("class", "card show open match");
-  		openList[1].setAttribute("class", "card show open match");
+  		openList[0].setAttribute("class", "card show open match animated rubberBand");
+  		openList[1].setAttribute("class", "card show open match animated rubberBand");
   		openList = [];
   		matchesCards += 1;
   		checkEndGame();

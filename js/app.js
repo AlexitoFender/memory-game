@@ -166,8 +166,8 @@ let matchesCards = 0;
 
 function cardsMatch(array){
       //Block the cards when match
-  		openList[0].setAttribute("class", "card show open match animated rubberBand block");
-  		openList[1].setAttribute("class", "card show open match animated rubberBand block");
+  		openList[0].setAttribute("class", "card show open match animated flipOut block");
+  		openList[1].setAttribute("class", "card show open match animated flipOut block");
   		openList = [];
   		matchesCards += 1;
   		checkEndGame();
@@ -193,10 +193,11 @@ function cardsDoNotMatch(array){
 let timerCounter = document.querySelector(".timer");
 let oneTime = false;
 let timerToStop;
+let timer = 1;
 
 function timeCounter(){
 	oneTime = true;
-    let timer = 1;
+    timer = 1;
 	  timerToStop = setInterval(function(){
     		timerCounter.innerHTML = timer;
     		timer++;

@@ -166,8 +166,8 @@ let matchesCards = 0;
 
 function cardsMatch(array){
       //Block the cards when match
-  		openList[0].setAttribute("class", "card show open match animated flipOut block");
-  		openList[1].setAttribute("class", "card show open match animated flipOut block");
+  		openList[0].setAttribute("class", "card show open match animated rubberBand block");
+  		openList[1].setAttribute("class", "card show open match animated rubberBand block");
   		openList = [];
   		matchesCards += 1;
   		checkEndGame();

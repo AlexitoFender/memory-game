@@ -246,6 +246,7 @@ function reset(){
   oneTime = false;
   clearInterval(timerToStop);
   timerCounter.innerHTML = 0;
+  timer = 0;
   shuffle(contentToShuffle);
   addShuffleCardContent(shuffleCards);
   counter = 0;
@@ -285,6 +286,7 @@ function congrats(){
     lastStars.innerHTML = numberOfStars;
 
     playAgain.addEventListener("click", function(){
+      modal.style.display = "none";
       reset();
     })
   }, 1000);

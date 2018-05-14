@@ -125,9 +125,9 @@ function event(){
  * Counter of moves of all the cards
  */
 let counter = 0;
+const moves = document.querySelector(".moves");
 
 function movesCounter(){
-	const moves = document.querySelector(".moves");
 	counter += 1;
 	moves.innerHTML = counter;
   	valorateStars();
@@ -190,16 +190,17 @@ function cardsDoNotMatch(array){
 /*
  * Add timer
  */
-let timer = 1;
 let timerCounter = document.querySelector(".timer");
 let oneTime = false;
+let timerToStop;
 
 function timeCounter(){
 	oneTime = true;
-	window.setInterval(function(){
-  		timerCounter.innerHTML = timer;
-  		timer++;
-	},1000);
+    let timer = 1;
+	  timerToStop = setInterval(function(){
+    		timerCounter.innerHTML = timer;
+    		timer++;
+	  },1000);
 };
 
 /*
@@ -241,7 +242,22 @@ restart.addEventListener("click", function(){
 });
 
 function reset(){
-  location.reload(true);
+  oneTime = false;
+  clearInterval(timerToStop);
+  timerCounter.innerHTML = 0;
+  shuffle(contentToShuffle);
+  addShuffleCardContent(shuffleCards);
+  counter = 0;
+  moves.innerHTML = counter;
+  matchesCards = 0;
+  for (let i = 0; i< 3; i++) {
+    stars[i].setAttribute("class", "fa fa-star");
+  }
+  for (let i = 0; i< 16; i++) {
+    cardList[i].setAttribute("class", "card");
+  }
+  openList = [];
+  addEventListener();
 }
 
 /*

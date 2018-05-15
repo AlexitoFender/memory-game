@@ -155,6 +155,26 @@ h1 {
 }
 
 /* Small view */
-@media screen and (min-width: 800px){
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 4em;
+    }
 
+    .score-panel {
+        width: 90%;
+    }
+
+    .stars, .moves-container, .timer-container, .restart {
+        width: 25%;
+    }
+
+    .deck {
+        width: 90vw;
+        min-height: 90vw;
+    }
+
+    .deck .card {
+        width: 22.5vw;
+        height: 22.5vw;
+    }
 }

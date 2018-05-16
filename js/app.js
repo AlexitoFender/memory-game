@@ -243,6 +243,7 @@ restart.addEventListener("click", function(){
 });
 
 function reset(){
+  document.querySelector(".container").setAttribute('style', "filter :initial");
   oneTime = false;
   clearInterval(timerToStop);
   timerCounter.innerHTML = 0;
@@ -286,6 +287,8 @@ function congrats(){
     let numberOfStars = valorateStars();
     const lastStars = document.querySelector(".last-stars");
     lastStars.innerHTML = numberOfStars;
+
+    document.querySelector(".container").setAttribute('style', "filter :blur(6px)");
 
     playAgain.addEventListener("click", function(){
       modal.style.display = "none";

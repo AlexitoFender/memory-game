@@ -244,7 +244,7 @@ restart.addEventListener("click", function(){
 
 function reset(){
   document.querySelector(".container").setAttribute('style', "filter :initial");
-  modal.setAttribute('class', "modal-finish animated bounceOut");
+  modal.style.display = "none";
   oneTime = false;
   clearInterval(timerToStop);
   timerCounter.innerHTML = 0;
@@ -258,7 +258,7 @@ function reset(){
     stars[i].setAttribute("class", "fa fa-star");
   }
   for (let i = 0; i< 16; i++) {
-    cardList[i].setAttribute("class", "card");
+    cardList[i].setAttribute("class", "card animated flipInY");
   }
   openList = [];
   addEventListener();

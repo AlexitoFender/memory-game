@@ -244,6 +244,7 @@ restart.addEventListener("click", function(){
 
 function reset(){
   document.querySelector(".container").setAttribute('style', "filter :initial");
+  modal.setAttribute('class', "modal-finish animated bounceOut");
   oneTime = false;
   clearInterval(timerToStop);
   timerCounter.innerHTML = 0;
@@ -267,21 +268,22 @@ function reset(){
  * End game alert
  */
 const playAgain = document.querySelector(".play-again");
+const modal = document.querySelector(".modal-finish");
+const modalContent = document.querySelector(".modal-content");
+const lastTimer = document.querySelector(".last-timer");
+const lastMoves = document.querySelector(".last-moves");
 
 function congrats(){
   setTimeout(function(){
     clearInterval(timerToStop);
 
-    const modal = document.querySelector(".modal-finish");
     modal.style.display = "block";
+    modal.setAttribute('class', "modal-finish animated bounceIn");
 
-    const modalContent = document.querySelector(".modal-content");
     modalContent.setAttribute("class", "modal-content animated bounceIn")
 
-    const lastTimer = document.querySelector(".last-timer");
     lastTimer.innerHTML = timer - 1;
 
-    const lastMoves = document.querySelector(".last-moves");
     lastMoves.innerHTML = counter;
 
     let numberOfStars = valorateStars();
@@ -291,7 +293,6 @@ function congrats(){
     document.querySelector(".container").setAttribute('style', "filter :blur(6px)");
 
     playAgain.addEventListener("click", function(){
-      modal.style.display = "none";
       reset();
     })
   }, 1000);

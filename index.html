@@ -1,101 +1,94 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Matching Game</title>
-    <meta name="description" content="">
-    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet">
-    <link rel="stylesheet" href="css/app.css">
-    <!-- animate library css by Daniel Eden. -->
-    <!-- https://daneden.github.io/animate.css/ -->
-    <!-- License: -->
-    <!-- Animate.css is licensed under the MIT license. -->
-    <!-- http://opensource.org/licenses/MIT -->
-    <link rel="stylesheet" href="css/animate.css">
-</head>
-<body>
-
-    <div class="container">
-        <header>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Matching Game</title>
+      <meta name="description" content="">
+      <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet">
+      <link rel="stylesheet" href="css/app.css">
+      <!-- animate library css by Daniel Eden. -->
+      <!-- https://daneden.github.io/animate.css/ -->
+      <!-- License: -->
+      <!-- Animate.css is licensed under the MIT license. -->
+      <!-- http://opensource.org/licenses/MIT -->
+      <link rel="stylesheet" href="css/animate.css">
+   </head>
+   <body>
+      <div class="container">
+         <header>
             <h1>MATCHING GAME</h1>
-        </header>
-
-        <section class="score-panel">
+         </header>
+         <section class="score-panel">
             <ul class="stars">
-                <li><i class="fa fa-star"></i></li>
-                <li><i class="fa fa-star"></i></li>
-                <li><i class="fa fa-star"></i></li>
+               <li><i class="fa fa-star"></i></li>
+               <li><i class="fa fa-star"></i></li>
+               <li><i class="fa fa-star"></i></li>
             </ul>
-
             <div class = "moves-container">
-                <span class="moves">0</span> mov
+               <span class="moves">0</span> mov
             </div>
-
             <div class = "timer-container">
-                <span class="timer">0</span> sec
+               <span class="timer">0</span> sec
             </div>
-
             <div class="restart">
-                <i class="fa fa-repeat"></i>
+               <i class="fa fa-repeat"></i>
             </div>
-        </section>
-
-        <ul class="deck">
+         </section>
+         <ul class="deck">
             <li class="card">
-                <i class="fa fa-diamond"></i>
+               <i class="fa fa-diamond"></i>
             </li>
             <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
+               <i class="fa fa-paper-plane-o"></i>
             </li>
             <li class="card">
-                <i class="fa fa-anchor"></i>
+               <i class="fa fa-anchor"></i>
             </li>
             <li class="card">
-                <i class="fa fa-bolt"></i>
+               <i class="fa fa-bolt"></i>
             </li>
             <li class="card">
-                <i class="fa fa-cube"></i>
+               <i class="fa fa-cube"></i>
             </li>
             <li class="card">
-                <i class="fa fa-anchor"></i>
+               <i class="fa fa-anchor"></i>
             </li>
             <li class="card">
-                <i class="fa fa-leaf"></i>
+               <i class="fa fa-leaf"></i>
             </li>
             <li class="card">
-                <i class="fa fa-bicycle"></i>
+               <i class="fa fa-bicycle"></i>
             </li>
             <li class="card">
-                <i class="fa fa-diamond"></i>
+               <i class="fa fa-diamond"></i>
             </li>
             <li class="card">
-                <i class="fa fa-bomb"></i>
+               <i class="fa fa-bomb"></i>
             </li>
             <li class="card">
-                <i class="fa fa-leaf"></i>
+               <i class="fa fa-leaf"></i>
             </li>
             <li class="card">
-                <i class="fa fa-bomb"></i>
+               <i class="fa fa-bomb"></i>
             </li>
             <li class="card">
-                <i class="fa fa-bolt"></i>
+               <i class="fa fa-bolt"></i>
             </li>
             <li class="card">
-                <i class="fa fa-bicycle"></i>
+               <i class="fa fa-bicycle"></i>
             </li>
             <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
+               <i class="fa fa-paper-plane-o"></i>
             </li>
             <li class="card">
-                <i class="fa fa-cube"></i>
+               <i class="fa fa-cube"></i>
             </li>
-        </ul>
-    </div>
-
-    <div class="modal-finish">
-        <div class="modal-content">
+         </ul>
+      </div>
+      <div class="modal-finish">
+         <div class="modal-content">
             <p class="congrats">Congratulations!!! </p>
             You won in
             <span class="modal-number last-timer">0</span>
@@ -105,11 +98,10 @@
             <span class="modal-number last-stars">0</span>
             stars
             <p>
-                <button type="button" class="play-again">Play again</button>
+               <button type="button" class="play-again">Play again</button>
             </p>
-        </div>
-    </div>
-
-    <script src="js/app.js"></script>
-</body>
+         </div>
+      </div>
+      <script src="js/app.js"></script>
+   </body>
 </html>

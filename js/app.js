@@ -12,22 +12,23 @@ let cardContentList = document.querySelectorAll(".card i");
  * Create a list of classes for set attribute to the <i> tags
  */
 const contentToShuffle = [
-'fa fa-diamond',
-'fa fa-diamond',
-'fa fa-paper-plane-o',
-'fa fa-paper-plane-o',
-'fa fa-anchor',
-'fa fa-anchor',
-'fa fa-bolt',
-'fa fa-bolt',
-'fa fa-cube',
-'fa fa-cube',
-'fa fa-leaf',
-'fa fa-leaf',
-'fa fa-bicycle',
-'fa fa-bicycle',
-'fa fa-bomb',
-'fa fa-bomb']
+    'fa fa-diamond',
+    'fa fa-diamond',
+    'fa fa-paper-plane-o',
+    'fa fa-paper-plane-o',
+    'fa fa-anchor',
+    'fa fa-anchor',
+    'fa fa-bolt',
+    'fa fa-bolt',
+    'fa fa-cube',
+    'fa fa-cube',
+    'fa fa-leaf',
+    'fa fa-leaf',
+    'fa fa-bicycle',
+    'fa fa-bicycle',
+    'fa fa-bomb',
+    'fa fa-bomb'
+]
 
 /*
  * Display the cards on the page
@@ -36,18 +37,19 @@ const contentToShuffle = [
  *   - add each card's HTML to the page
  */
 
- /*
+/*
  * Set shuffled classes to <i>, shuffled icons every time
  */
-function addShuffleCardContent(array){
-	for (let i = 0; i < 16; i++){
-		cardContentList[i].setAttribute('class', array[i]);
-	}
+function addShuffleCardContent(array) {
+    for (let i = 0; i < 16; i++) {
+        cardContentList[i].setAttribute('class', array[i]);
+    }
 }
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    var currentIndex = array.length,
+        temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
@@ -89,36 +91,36 @@ addEventListener();
 /*
  * Declarations for add event listener and remove event listener
  */
-function addEventListener(){
-	for (let i = 0; i< 16; i++) {
-    //Validation to block the cards when match
-    if(cardList[i].className != "card show open match animated rubberBand block"){
-  		  addEvent(cardList[i]);
-      }
-  	}
+function addEventListener() {
+    for (let i = 0; i < 16; i++) {
+        //Validation to block the cards when match
+        if (cardList[i].className != "card show open match animated rubberBand block") {
+            addEvent(cardList[i]);
+        }
+    }
 }
 
-function removeEventListener(){
-	for (let i = 0; i< 16; i++) {
-  		removeEvent(cardList[i]);
-  	}
+function removeEventListener() {
+    for (let i = 0; i < 16; i++) {
+        removeEvent(cardList[i]);
+    }
 }
 
-function addEvent(card){
-	card.addEventListener("click", event);
+function addEvent(card) {
+    card.addEventListener("click", event);
 }
 
-function removeEvent(card){
-	card.removeEventListener("click", event);
+function removeEvent(card) {
+    card.removeEventListener("click", event);
 }
 
 /*
  * Function event separated of the function add event listener, this make possible the remove event listener
  */
-function event(){
-	displayCardSymbol(this);
-	this.removeEventListener("click", event);
-	listOpenCards(this);
+function event() {
+    displayCardSymbol(this);
+    this.removeEventListener("click", event);
+    listOpenCards(this);
 }
 
 /*
@@ -127,20 +129,20 @@ function event(){
 let counter = 0;
 const moves = document.querySelector(".moves");
 
-function movesCounter(){
-	counter += 1;
-	moves.innerHTML = counter;
-  	valorateStars();
+function movesCounter() {
+    counter += 1;
+    moves.innerHTML = counter;
+    valorateStars();
 }
 
 /*
  * Display the icon and change the color of the card when is clicked
  */
-function displayCardSymbol(card){
-	card.setAttribute("class", "card show open animated bounceIn");
-	if(!oneTime){
-		timeCounter();
-	}
+function displayCardSymbol(card) {
+    card.setAttribute("class", "card show open animated bounceIn");
+    if (!oneTime) {
+        timeCounter();
+    }
 }
 
 /*
@@ -148,43 +150,43 @@ function displayCardSymbol(card){
  */
 let openList = [];
 
-function listOpenCards(card){
-	openList.push(card);
+function listOpenCards(card) {
+    openList.push(card);
 
-  	if(openList[1] != undefined && openList[0].innerHTML === openList[1].innerHTML){
-  		movesCounter();
-  		cardsMatch(openList);
-  	}
+    if (openList[1] != undefined && openList[0].innerHTML === openList[1].innerHTML) {
+        movesCounter();
+        cardsMatch(openList);
+    }
 
-  	if(openList[1] != undefined && openList[0].innerHTML != openList[1].innerHTML){
-  		movesCounter();
-  		cardsDoNotMatch(openList);
-  	}
+    if (openList[1] != undefined && openList[0].innerHTML != openList[1].innerHTML) {
+        movesCounter();
+        cardsDoNotMatch(openList);
+    }
 }
 
 let matchesCards = 0;
 
-function cardsMatch(array){
-      //Block the cards when match
-  		openList[0].setAttribute("class", "card show open match animated rubberBand block");
-  		openList[1].setAttribute("class", "card show open match animated rubberBand block");
-  		openList = [];
-  		matchesCards += 1;
-  		checkEndGame();
+function cardsMatch(array) {
+    //Block the cards when match
+    openList[0].setAttribute("class", "card show open match animated rubberBand block");
+    openList[1].setAttribute("class", "card show open match animated rubberBand block");
+    openList = [];
+    matchesCards += 1;
+    checkEndGame();
 }
 
-function cardsDoNotMatch(array){
-		removeEventListener();
-      setTimeout(function(){
-  		openList[0].setAttribute("class", "card show nomatch animated shake");
-  		openList[1].setAttribute("class", "card show nomatch animated shake");
-      }, 200);
-  		setTimeout(function(){
-  		 	openList[0].setAttribute("class", "card animated flipInY");
-  			openList[1].setAttribute("class", "card animated flipInY");
-  			openList = [];
-  			addEventListener();
-  		}, 700);
+function cardsDoNotMatch(array) {
+    removeEventListener();
+    setTimeout(function() {
+        openList[0].setAttribute("class", "card show nomatch animated shake");
+        openList[1].setAttribute("class", "card show nomatch animated shake");
+    }, 200);
+    setTimeout(function() {
+        openList[0].setAttribute("class", "card animated flipInY");
+        openList[1].setAttribute("class", "card animated flipInY");
+        openList = [];
+        addEventListener();
+    }, 700);
 }
 
 /*
@@ -195,13 +197,13 @@ let oneTime = false;
 let timerToStop;
 let timer;
 
-function timeCounter(){
-	oneTime = true;
+function timeCounter() {
+    oneTime = true;
     timer = 1;
-	  timerToStop = setInterval(function(){
-    		timerCounter.innerHTML = timer;
-    		timer++;
-	  },1000);
+    timerToStop = setInterval(function() {
+        timerCounter.innerHTML = timer;
+        timer++;
+    }, 1000);
 };
 
 /*
@@ -209,59 +211,59 @@ function timeCounter(){
  */
 const stars = document.querySelectorAll(".stars i");
 
-function valorateStars(){
-		if(counter <= 16){
-			return 3;
-		}
+function valorateStars() {
+    if (counter <= 16) {
+        return 3;
+    }
 
-		if(counter > 16 && counter <= 24){
-			stars[2].setAttribute("class", "fa fa-star-o");
-			return 2;
-		}
-		if(counter > 24){
-			stars[1].setAttribute("class", "fa fa-star-o");
-			return 1;
-		}
+    if (counter > 16 && counter <= 24) {
+        stars[2].setAttribute("class", "fa fa-star-o");
+        return 2;
+    }
+    if (counter > 24) {
+        stars[1].setAttribute("class", "fa fa-star-o");
+        return 1;
+    }
 }
 
 /*
  * Check end game
  */
- function checkEndGame(){
- 	//Neened at least 8 movements for finish the game
- 	if(counter >= 8 && matchesCards === 8){
- 		congrats();
- 	}
- }
+function checkEndGame() {
+    //Neened at least 8 movements for finish the game
+    if (counter >= 8 && matchesCards === 8) {
+        congrats();
+    }
+}
 
 /*
-  * Function to reset the game
-  */
+ * Function to reset the game
+ */
 const restart = document.querySelector(".fa-repeat");
-restart.addEventListener("click", function(){
-  reset();
+restart.addEventListener("click", function() {
+    reset();
 });
 
-function reset(){
-  document.querySelector(".container").setAttribute('style', "filter :initial");
-  modal.style.display = "none";
-  oneTime = false;
-  clearInterval(timerToStop);
-  timerCounter.innerHTML = 0;
-  timer = 0;
-  shuffle(contentToShuffle);
-  addShuffleCardContent(shuffleCards);
-  counter = 0;
-  moves.innerHTML = counter;
-  matchesCards = 0;
-  for (let i = 0; i< 3; i++) {
-    stars[i].setAttribute("class", "fa fa-star");
-  }
-  for (let i = 0; i< 16; i++) {
-    cardList[i].setAttribute("class", "card animated flipInY");
-  }
-  openList = [];
-  addEventListener();
+function reset() {
+    document.querySelector(".container").setAttribute('style', "filter :initial");
+    modal.style.display = "none";
+    oneTime = false;
+    clearInterval(timerToStop);
+    timerCounter.innerHTML = 0;
+    timer = 0;
+    shuffle(contentToShuffle);
+    addShuffleCardContent(shuffleCards);
+    counter = 0;
+    moves.innerHTML = counter;
+    matchesCards = 0;
+    for (let i = 0; i < 3; i++) {
+        stars[i].setAttribute("class", "fa fa-star");
+    }
+    for (let i = 0; i < 16; i++) {
+        cardList[i].setAttribute("class", "card animated flipInY");
+    }
+    openList = [];
+    addEventListener();
 }
 
 /*
@@ -273,27 +275,27 @@ const modalContent = document.querySelector(".modal-content");
 const lastTimer = document.querySelector(".last-timer");
 const lastMoves = document.querySelector(".last-moves");
 
-function congrats(){
-  setTimeout(function(){
-    clearInterval(timerToStop);
+function congrats() {
+    setTimeout(function() {
+        clearInterval(timerToStop);
 
-    modal.style.display = "block";
-    modal.setAttribute('class', "modal-finish animated bounceIn");
+        modal.style.display = "block";
+        modal.setAttribute('class', "modal-finish animated bounceIn");
 
-    modalContent.setAttribute("class", "modal-content animated bounceIn")
+        modalContent.setAttribute("class", "modal-content animated bounceIn")
 
-    lastTimer.innerHTML = timer - 1;
+        lastTimer.innerHTML = timer - 1;
 
-    lastMoves.innerHTML = counter;
+        lastMoves.innerHTML = counter;
 
-    let numberOfStars = valorateStars();
-    const lastStars = document.querySelector(".last-stars");
-    lastStars.innerHTML = numberOfStars;
+        let numberOfStars = valorateStars();
+        const lastStars = document.querySelector(".last-stars");
+        lastStars.innerHTML = numberOfStars;
 
-    document.querySelector(".container").setAttribute('style', "filter :blur(6px)");
+        document.querySelector(".container").setAttribute('style', "filter :blur(6px)");
 
-    playAgain.addEventListener("click", function(){
-      reset();
-    })
-  }, 1000);
+        playAgain.addEventListener("click", function() {
+            reset();
+        })
+    }, 1000);
 }

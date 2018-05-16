@@ -193,7 +193,7 @@ function cardsDoNotMatch(array){
 let timerCounter = document.querySelector(".timer");
 let oneTime = false;
 let timerToStop;
-let timer = 1;
+let timer;
 
 function timeCounter(){
 	oneTime = true;
@@ -269,6 +269,8 @@ const playAgain = document.querySelector(".play-again");
 
 function congrats(){
   setTimeout(function(){
+    clearInterval(timerToStop);
+
     const modal = document.querySelector(".modal-finish");
     modal.style.display = "block";
 
@@ -276,7 +278,7 @@ function congrats(){
     modalContent.setAttribute("class", "modal-content animated bounceIn")
 
     const lastTimer = document.querySelector(".last-timer");
-    lastTimer.innerHTML = timer;
+    lastTimer.innerHTML = timer - 1;
 
     const lastMoves = document.querySelector(".last-moves");
     lastMoves.innerHTML = counter;
